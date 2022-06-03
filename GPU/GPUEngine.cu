@@ -120,8 +120,7 @@ int _ConvertSMVer2Cores(int major,int minor) {
     { 0x62, 128 },
     { 0x70,  64 },
     { 0x72,  64 },
-    { 0x75,  64 },
-    { 0x86, 128 },    
+    { 0x75,  64 },  
     { -1, -1 } };
 
   int index = 0;
@@ -153,7 +152,7 @@ GPUEngine::GPUEngine(int nbThreadGroup,int nbThreadPerGroup,int gpuId,uint32_t m
   cudaError_t error_id = cudaGetDeviceCount(&deviceCount);
 
   if(error_id != cudaSuccess) {
-    //printf("GPUEngine: CudaGetDeviceCount %s\n",cudaGetErrorString(error_id));
+    printf("GPUEngine: CudaGetDeviceCount %s\n",cudaGetErrorString(error_id));
     return;
   }
 
