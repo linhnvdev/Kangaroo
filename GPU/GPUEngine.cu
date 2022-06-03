@@ -548,10 +548,10 @@ bool GPUEngine::callKernel() {
       (inputKangaroo,maxFound,outputItem,dpMask);
 
   cudaError_t err = cudaGetLastError();
-  //if(err != cudaSuccess) {
+  if(err != cudaSuccess) {
     //printf("GPUEngine: Kernel: %s\n",cudaGetErrorString(err));
-    //return false;
-  //}
+    return false;
+  }
 
   return true;
 
